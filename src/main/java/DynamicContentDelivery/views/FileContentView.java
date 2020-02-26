@@ -10,11 +10,13 @@ public class FileContentView extends View {
 
     private final String fileName;
     private ArrayList<String> lines;
+    private long id;
 
     public FileContentView(FileContent fileContent) {
         super("fileContent.ftl");
         this.lines = fileContent.getLines();
         this.fileName = fileContent.getFileName();
+        this.id = fileContent.getId();
     }
 
     public ArrayList<String> getLines() {
@@ -29,4 +31,7 @@ public class FileContentView extends View {
         return this.fileName;
     }
 
+    public long getId(){
+        return id;
+    }
 }

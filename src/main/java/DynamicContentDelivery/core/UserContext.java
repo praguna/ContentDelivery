@@ -9,23 +9,13 @@ class UserContext extends TimerTask {
     private boolean remove;
     private long key;
 
-    UserContext(ArrayList<String> lines, long fp, long key) {
-        this.lines = lines;
-        this.file_pointer = fp;
+    UserContext(long key) {
         this.remove = true;
         this.key = key;
     }
 
     ArrayList<String> getLines() {
         return this.lines;
-    }
-
-    long getFile_pointer() {
-        return this.file_pointer;
-    }
-
-    void setFile_pointer(long fp) {
-        this.file_pointer = fp;
     }
 
     void append(String line) {
@@ -36,15 +26,19 @@ class UserContext extends TimerTask {
         this.remove = value;
     }
 
+    void clear(){
+        this.lines.clear();
+    }
+
     @Override
     public void run() {
         System.out.println("Checking up user-connect..");
         if (!this.remove) {
             set_remove(true);
-            System.out.println("User Persists !!");
+            System.out.println(String.format("User %d Persists !!",this.key));
         } else {
             FileState.contextMap.remove(this.key);
-            System.out.println("Removed a user from map!!");
+            System.out.println(String.format("Removed a user %d from map!!",this.key));
             this.cancel();
         }
     }

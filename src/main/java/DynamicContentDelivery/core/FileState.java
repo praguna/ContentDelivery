@@ -37,7 +37,6 @@ public class FileState extends TimerTask {
 
     public Queue<String> getContents() {
         Queue<String> copy_contents = new ArrayDeque<String>(contents);
-
         return copy_contents;
     }
 
@@ -62,12 +61,14 @@ public class FileState extends TimerTask {
         }
         try {
             Scanner scanner = new Scanner(new FileReader(randomAccessFile.getFD()));
-            if (!scanner.hasNextLine()) System.out.println("No changes found ....");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 if (line.length() == 0) continue;
                 this.insert(line);
-                System.out.println("Updated Global State... inserted  : " + line);
+                for (UserContext userContext: contextMap.values()) {
+                        userContext.append(line);
+                }
+                System.out.println("Updated Global State and local states... inserted  : " + line);
             }
         } catch (IOException e) {
             e.printStackTrace();
