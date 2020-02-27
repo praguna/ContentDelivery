@@ -30,7 +30,7 @@ public class ContentDeliveryApplication extends Application<ContentDeliveryConfi
                     final Environment environment) throws IOException {
         environment.jersey().register(new FileContentResource(configuration.getFileName()));
         Timer timer = new Timer();
-        FileState fileState = new FileState(System.getProperty("user.dir") + "/" + configuration.getFileName());
+        FileState fileState = new FileState(configuration.getFileName());
         timer.schedule(fileState, 5000, 5000);
     }
 

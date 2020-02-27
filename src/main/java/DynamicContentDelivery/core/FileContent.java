@@ -2,7 +2,6 @@ package DynamicContentDelivery.core;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Queue;
 import java.util.Timer;
 

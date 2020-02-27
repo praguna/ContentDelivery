@@ -35,10 +35,10 @@ class UserContext extends TimerTask {
         System.out.println("Checking up user-connect..");
         if (!this.remove) {
             set_remove(true);
-            System.out.println(String.format("User %d Persists !!",this.key));
+            System.out.println(String.format("User id :%d Persists !!", this.key));
         } else {
             FileState.contextMap.remove(this.key);
-            System.out.println(String.format("Removed a user %d from map!!",this.key));
+            System.out.println(String.format("Removed a user id:  %d from map!!",this.key));
             this.cancel();
         }
     }
