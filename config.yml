@@ -1,5 +1,0 @@
-logging:
-  level: INFO
-  loggers:
-    DynamicContentDelivery: DEBUG
-fileName: test_file.txt
