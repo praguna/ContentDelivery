@@ -13,8 +13,8 @@ import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 
 public class FileState extends TimerTask {
-    static Map<Long, UserContext> contextMap = new HashMap<Long, UserContext>();
-    private static Queue<String> contents = new ArrayBlockingQueue<String>(10);
+    static Map<Long, UserContext> contextMap = new HashMap<>();
+    private static Queue<String> contents = new ArrayBlockingQueue<>(10);
     private static RandomAccessFile randomAccessFile;
     private static int global_num_lines = 0;
     private static String file_loc;
@@ -36,7 +36,7 @@ public class FileState extends TimerTask {
         }
     }
 
-    public static void init_Queue(String file_loc) throws IOException {
+    private static void init_Queue(String file_loc) throws IOException {
         randomAccessFile = new RandomAccessFile(file_loc, "r");
         Scanner scanner = new Scanner(new FileReader(randomAccessFile.getFD()));
         while (scanner.hasNextLine()) {
@@ -46,7 +46,7 @@ public class FileState extends TimerTask {
         }
     }
 
-    public static void update_file() throws InterruptedException {
+    private static void update_file() throws InterruptedException {
         System.out.println("Monitoring File for changes .....");
         WatchKey wk = watchService.take();
         for(WatchEvent<?> event : wk.pollEvents()){

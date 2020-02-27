@@ -28,8 +28,10 @@ public class ContentDeliveryApplication extends Application<ContentDeliveryConfi
     @Override
     public void run(final ContentDeliveryConfiguration configuration,
                     final Environment environment) throws IOException {
+        //gets file name from here
         environment.jersey().register(new FileContentResource(configuration.getFileName()));
         Timer timer = new Timer();
+        //global filestate contains all the data structures used by the application
         FileState fileState = new FileState(configuration.getFileName());
         timer.schedule(fileState, 5000, 5000);
     }
