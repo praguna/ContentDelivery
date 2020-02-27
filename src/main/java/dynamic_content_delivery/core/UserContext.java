@@ -1,4 +1,4 @@
-package DynamicContentDelivery.core;
+package dynamic_content_delivery.core;
 
 import java.util.ArrayList;
 import java.util.TimerTask;

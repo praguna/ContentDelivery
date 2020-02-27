@@ -1,4 +1,4 @@
-package DynamicContentDelivery.api;
+package dynamic_content_delivery.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

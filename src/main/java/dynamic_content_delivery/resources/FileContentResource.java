@@ -1,9 +1,9 @@
-package DynamicContentDelivery.resources;
+package dynamic_content_delivery.resources;
 
-import DynamicContentDelivery.api.DeltaContent;
-import DynamicContentDelivery.core.FileContent;
-import DynamicContentDelivery.core.FileState;
-import DynamicContentDelivery.views.FileContentView;
+import dynamic_content_delivery.api.DeltaContent;
+import dynamic_content_delivery.core.FileContent;
+import dynamic_content_delivery.core.FileState;
+import dynamic_content_delivery.views.FileContentView;
 import com.codahale.metrics.annotation.Timed;
 
 import javax.servlet.http.HttpServletRequest;

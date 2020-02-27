@@ -1,4 +1,4 @@
-package DynamicContentDelivery;
+package dynamic_content_delivery;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;

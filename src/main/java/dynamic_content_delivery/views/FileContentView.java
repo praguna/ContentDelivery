@@ -1,6 +1,6 @@
-package DynamicContentDelivery.views;
+package dynamic_content_delivery.views;
 
-import DynamicContentDelivery.core.FileContent;
+import dynamic_content_delivery.core.FileContent;
 import io.dropwizard.views.View;
 
 import java.util.ArrayList;

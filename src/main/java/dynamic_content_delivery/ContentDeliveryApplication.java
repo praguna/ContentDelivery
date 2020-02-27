@@ -1,7 +1,7 @@
-package DynamicContentDelivery;
+package dynamic_content_delivery;
 
-import DynamicContentDelivery.core.FileState;
-import DynamicContentDelivery.resources.FileContentResource;
+import dynamic_content_delivery.core.FileState;
+import dynamic_content_delivery.resources.FileContentResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
