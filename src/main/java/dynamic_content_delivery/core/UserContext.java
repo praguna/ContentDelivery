@@ -5,7 +5,6 @@ import java.util.TimerTask;
 
 class UserContext extends TimerTask {
     private ArrayList<String> lines = new ArrayList<String>();
-    private long file_pointer;
     private boolean remove;
     private long key;
 
@@ -30,6 +29,10 @@ class UserContext extends TimerTask {
         this.lines.clear();
     }
 
+    boolean getRemove(){
+        return this.remove;
+    }
+
     @Override
     public void run() {
         System.out.println("Checking up user-connect..");
@@ -41,5 +44,9 @@ class UserContext extends TimerTask {
             System.out.println(String.format("Removed a user id:  %d from map!!",this.key));
             this.cancel();
         }
+    }
+
+    public long getKey() {
+        return this.key;
     }
 }

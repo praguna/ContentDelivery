@@ -29,6 +29,7 @@ public class FileContent {
         this.name = name;
         this.hash_code = hash_code;
         UserContext userContext = FileState.contextMap.get(this.hash_code);
+        if(userContext == null) return;
         this.lines = new ArrayList<String>(userContext.getLines());
         System.out.println("Found in map!");
         userContext.set_remove(false);

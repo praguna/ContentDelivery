@@ -46,7 +46,7 @@ public class FileState extends TimerTask {
         }
     }
 
-    private static void update_file() throws InterruptedException {
+    static void update_file() throws InterruptedException {
         System.out.println("Monitoring File for changes .....");
         WatchKey wk = watchService.take();
         for(WatchEvent<?> event : wk.pollEvents()){
@@ -66,7 +66,7 @@ public class FileState extends TimerTask {
         wk.reset();
     }
 
-    private static void write_context() throws IOException {
+    static void write_context() throws IOException {
         Scanner scanner = new Scanner(new FileReader(randomAccessFile.getFD()));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -79,12 +79,12 @@ public class FileState extends TimerTask {
             }
     }
 
-    private static void setFileName(String fileName) {
+    static void setFileName(String fileName) {
         FileState.file_loc = fileName;
     }
 
 
-    private static void insert(String new_line) {
+    static void insert(String new_line) {
         ++global_num_lines;
         if (!contents.isEmpty()) contents.remove();
         contents.add(new_line);

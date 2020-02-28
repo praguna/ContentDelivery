@@ -25,6 +25,7 @@ public class FileContentResource {
         this.fileName = fileName;
     }
 
+
     @GET
     @Timed
     @Consumes(MediaType.APPLICATION_JSON)

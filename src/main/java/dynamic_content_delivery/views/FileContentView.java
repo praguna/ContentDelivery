@@ -1,10 +1,7 @@
 package dynamic_content_delivery.views;
-
 import dynamic_content_delivery.core.FileContent;
 import io.dropwizard.views.View;
-
 import java.util.ArrayList;
-
 
 public class FileContentView extends View {
 
